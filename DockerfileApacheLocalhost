@@ -1,0 +1,5 @@
+FROM httpd:2.4
+
+COPY ./dist/angular-prerender/browser /usr/local/apache2/htdocs/angular-prerender
+COPY ./server/apache/my-httpd.conf /usr/local/apache2/conf/httpd.conf
+COPY ./server/apache/my-vhosts-localhost.conf /usr/local/apache2/conf/extra/httpd-vhosts.conf

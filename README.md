@@ -1,3 +1,12 @@
+# How to run
+
+- point www.example.com to 127.0.0.1 in /etc/hosts
+- `npm run prerender`
+- `docker stop angular-prerender`
+- `docker rm angular-prerender`
+- `docker build -f DockerfileApacheLocalhost -t angular-prerender .`
+- `docker run -d -p 80:80 --name client-web-client angular-prerender`
+
 # AngularPrerender
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.6.
