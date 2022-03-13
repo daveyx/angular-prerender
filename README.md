@@ -5,7 +5,8 @@
 - `docker stop angular-prerender`
 - `docker rm angular-prerender`
 - `docker build -f DockerfileApacheLocalhost -t angular-prerender .`
-- `docker run -d -p 80:80 --name client-web-client angular-prerender`
+- `docker run -d -p 80:80 --name angular-prerender angular-prerender`
+- open www.example.com in browser
 
 # AngularPrerender
 
