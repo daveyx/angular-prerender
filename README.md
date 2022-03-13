@@ -1,3 +1,8 @@
+# Why this repo?
+https://stackoverflow.com/questions/71454612/angular-avoid-rerender-prerendered-page-serverd-by-apache
+
+For simulating an api call, i provided a short sleep.
+
 # How to run
 
 - point www.example.com to 127.0.0.1 in /etc/hosts
