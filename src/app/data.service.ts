@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { concatMap, delay, from, Observable, of } from 'rxjs';
+import { concatMap, delay, from, of } from 'rxjs';
 
 
 @Injectable({
@@ -7,10 +7,19 @@ import { concatMap, delay, from, Observable, of } from 'rxjs';
 })
 export class DataService {
 
+  data: string | undefined;
+
   constructor() {
   }
 
-  getData(): Observable<any> {
-    return from('a').pipe(concatMap(item => of(item).pipe(delay(2000))));
+  getData(): void {
+    if (this.data) {
+      return;
+    }
+
+    from('a').pipe(concatMap(item => of(item).pipe(delay(2000)))).subscribe(value => {
+      this.data = value;
+    });
   }
+
 }

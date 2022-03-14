@@ -10,19 +10,15 @@ import { DataService } from './data.service';
 export class AppComponent implements OnInit {
 
   title = 'angular-prerender';
-  data: string | undefined;
 
   constructor(private dataService: DataService) {
   }
 
   ngOnInit(): void {
-    if (this.data) {
-      return;
-    }
+  }
 
-    this.dataService.getData().subscribe(value => {
-      this.data = value;
-    });
+  getData(): string | undefined {
+    return this.dataService.data;
   }
 
 }
