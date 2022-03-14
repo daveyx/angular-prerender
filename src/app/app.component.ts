@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from './data.service';
 
 
 @Component({
@@ -9,14 +10,19 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
 
   title = 'angular-prerender';
-  dataLoaded = false;
+  data: string | undefined;
+
+  constructor(private dataService: DataService) {
+  }
 
   ngOnInit(): void {
+    if (this.data) {
+      return;
+    }
 
-    setTimeout(() => {
-      console.log('sleep...');
-      this.dataLoaded = true;
-    }, 2000);
+    this.dataService.getData().subscribe(value => {
+      this.data = value;
+    });
   }
 
 }
